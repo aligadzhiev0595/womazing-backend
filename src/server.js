@@ -1,9 +1,9 @@
-import express, { Express } from 'express'
+import express from 'express'
 import { connect } from 'mongoose'
 import cors from 'cors'
 
 const PORT = process.env.PORT || 8080
-const app: Express = express()
+const app = express()
 
 app.use(cors())
 const jsonBodyMiddleware = express.json()

@@ -1,10 +1,9 @@
-import { Request, Response } from 'express'
 import { Router } from 'express'
 
 const router = Router()
 const Products = require('../models/Products')
 
-router.get('/', async (req: Request, res: Response) => {
+router.get('/', async (req, res) => {
   try {
     const products = await Products.find()
     res.json(products)
@@ -13,7 +12,7 @@ router.get('/', async (req: Request, res: Response) => {
   }
 })
 
-router.get('/:id', async (req: Request, res: Response) => {
+router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
     const product = await Products.findById(id)
