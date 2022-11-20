@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "dev": "nodemon src/server.ts",
+    "server": "nodemon src/server.ts",
     "build": "yarn tsc && nodemon dist/server.js"
   },
   "keywords": [],
