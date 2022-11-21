@@ -1,6 +1,4 @@
-import{ Request, Response } from 'express'
-import { Router } from 'express';
-
+const { Router } = require('express')
 const router = Router()
 
 router.get('/', (req, res) => {
@@ -8,4 +6,3 @@ router.get('/', (req, res) => {
 })
 
 module.exports = router
-
