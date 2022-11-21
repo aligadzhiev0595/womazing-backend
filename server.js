@@ -15,7 +15,7 @@ async function start() {
   try {
     await mongoose.connect(
       'mongodb+srv://root:root@cluster0.na6fqa7.mongodb.net/shop?retryWrites=true&w=majority'
-    ).then(() => console.log(`⚡️[dataBase]: DataBase is running`))
+    ).then(() => console.log(`⚡️[dataBase]: DataBase is running`)).catch((e) => console.log(`⚡️[error]: DataBase ${e}`))
     app.listen(PORT, () => {
       console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`)
     })
