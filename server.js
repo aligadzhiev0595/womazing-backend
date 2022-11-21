@@ -8,8 +8,8 @@ const app = express()
 app.use(cors())
 const jsonBodyMiddleware = express.json()
 app.use(jsonBodyMiddleware)
-app.use('/', require('./routes/main.routes'))
-app.use('/api/products', require('./routes/products.routes'))
+app.use('/', require('./src/routes/main.routes'))
+app.use('/api/products', require('./src/routes/products.routes'))
 
 async function start() {
   try {
