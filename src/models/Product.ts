@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+import { Schema, model } from 'mongoose'
 
 const schema = new Schema({
   _id: { type: Number, required: true },
@@ -12,4 +12,4 @@ const schema = new Schema({
   inStock: { type: Number, required: true },
 })
 
-module.exports = model('Products', schema)
+module.exports = model('Product', schema)
