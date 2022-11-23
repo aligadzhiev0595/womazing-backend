@@ -1,6 +1,9 @@
 import express, { Express } from 'express'
 import { connect } from 'mongoose'
 import cors from 'cors'
+import { MainController } from './controllers/MainController'
+import { getAllProduct, getOneProduct } from './controllers/ProductController'
+import { addToCart, removeFromCart ,getCartItems} from './controllers/CartController'
 
 const PORT = process.env.PORT || 8080
 const app: Express = express()
@@ -8,9 +11,12 @@ const app: Express = express()
 app.use(cors())
 const jsonBodyMiddleware = express.json()
 app.use(jsonBodyMiddleware)
-app.use('/', require('./routes/main.routes'))
-app.use('/api/products', require('./routes/products.routes'))
-app.use('/api/cart', require('./routes/cart.routes'))
+app.get('/', MainController)
+app.get('/api/products', getAllProduct)
+app.get('/api/products/:id', getOneProduct)
+app.get('/api/cart', getCartItems)
+app.post('/api/cart', addToCart)
+app.delete('/api/cart/:id', removeFromCart)
 
 async function start() {
   try {

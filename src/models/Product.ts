@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose'
 
-const schema = new Schema({
+const ProductSchema = new Schema({
   _id: { type: Number, required: true },
   title: { type: String, required: true },
   price: { type: Number, required: true },
@@ -12,4 +12,5 @@ const schema = new Schema({
   inStock: { type: Number, required: true },
 })
 
-module.exports = model('Product', schema)
+export default model('Product', ProductSchema)
+
