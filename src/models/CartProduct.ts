@@ -5,11 +5,11 @@ const schema = new Schema({
   title: { type: String, required: true },
   price: { type: Number, required: true },
   priceSale: { type: Number, required: false },
-  image: { type: String, required:true },
+  image: { type: Object, default: {} },
   category: { type: String, required: true },
   size: { type: String, require: true },
-  colors: { type: String, require: true },
-  inStock: { type: Number, required: true },
+  color: { type: String, require: true },
+  inStock: { type: Number, required: false },
 })
 
 module.exports = model('CartProduct', schema)

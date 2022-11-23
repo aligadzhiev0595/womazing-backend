@@ -4,8 +4,7 @@ import { Router } from 'express'
 const router = Router()
 const CartProduct = require('../models/CartProduct')
 
-
-router.get('/',  async (req: Request, res: Response) => {
+router.get('/', async (req: Request, res: Response) => {
   try {
     const cartProduct = await CartProduct.find()
     res.json(cartProduct)
@@ -24,7 +23,7 @@ router.post('/add', async (req: Request, res: Response) => {
       image,
       category,
       size,
-      colors,
+      color,
       inStock,
     } = req.body
     const cartProduct = new CartProduct({
@@ -35,7 +34,7 @@ router.post('/add', async (req: Request, res: Response) => {
       image,
       category,
       size,
-      colors,
+      color,
       inStock,
     })
     await cartProduct.save()
